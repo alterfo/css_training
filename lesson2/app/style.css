@@ -1,0 +1,93 @@
+/* Reset
+------------------------------------------------------------ */
+* { margin: 0; padding: 0; }
+html { overflow-y: scroll;}
+body { background:#ffffff; font-size: 13px; color: #666666; font-family: Arial, helvetica, sans-serif;}
+ol, ul { list-style: none; margin: 0;}
+ul li { margin: 0; padding: 0;}
+h1 { margin-bottom: 10px; color: #111111;}  
+a, img { outline: none; border:none; color: #000; font-weight: bold; text-transform: uppercase;}
+p { margin: 0 0 10px; line-height: 1.4em; font-size: 1.2em;}
+img { display: block; margin-bottom: 10px;}
+aside { font-style: italic; font-size: 0.9em;}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section { 
+    display: block;
+    }
+
+
+
+#wrapper {
+    width: 96%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 2%;
+}
+
+li {
+    display: inline;
+    margin-left: 20px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+}
+
+#menu a {
+    border: none;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h1#logo {
+    float: left;
+}
+
+#menu {
+    float: right;
+    margin-top: 60px;
+}
+
+img {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px 0;
+}
+
+#main {
+    width: 60%;
+    float:left;
+}
+
+body {
+    font: 17px Verdana, sans-serif;
+}
+
+#aside {
+    width:35%;
+    float: right;
+}
+
+
+@media screen and (max-width: 640px) {
+    #menu, #main, #aside {
+        float: left;
+        margin: 10px 0 10px;
+        width: 100%;
+    }
+    
+    .menu-item a {
+        display: block;
+        padding: 10px; 
+        text-align: center;
+    }
+
+    .menu-item {
+        margin: 0;
+        background: #efefef;
+        display: block;
+        margin-bottom: 3px;
+    }
+}

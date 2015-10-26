@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Css training</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        // создать подключение
+        var socket = new WebSocket("ws://localhost:8081");
+
+        // отправить сообщение из формы publish
+       var sendMessage = function () {
+            var outgoingMessage = document.getElementById('message').value;
+
+            socket.send(outgoingMessage);
+           console.log(outgoingMessage);
+            return false;
+        };
+
+        // обработчик входящих сообщений
+        socket.onmessage = function (event) {
+            var incomingMessage = event.data;
+            showMessage(incomingMessage);
+            console.log('пришло сообщение', event);
+        };
+
+        // показать сообщение в div#subscribe
+        function showMessage(message) {
+            var messageElem = document.createElement('div');
+            messageElem.appendChild(document.createTextNode(message));
+            document.getElementById('subscribe').appendChild(messageElem);
+        }
+    </script>
+</head>
+
+<body>
+
+        <input type="text" name="message" id='message' />
+        <a href="#" onclick="sendMessage()">Отправить</a>
+    </form>
+
+    <!-- здесь будут появляться входящие сообщения -->
+    <div id="subscribe"></div>
+
+</body>
+
+</html>
